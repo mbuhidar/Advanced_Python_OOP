@@ -42,7 +42,11 @@ class Temperature:
         """Cleans the output of _scrape"""
 
         scraped_content = self._scrape()
-        return float(scraped_content['temp'].replace("°F", "").strip())
+        if "°F" in scraped_content['temp']:
+            return ((float(scraped_content['temp'].replace("°F", "").strip())
+                    - 32) * 5) / 9
+        else:
+            return float(scraped_content['temp'].replace("°C", "").strip())
 
 
 if __name__ == "__main__":
