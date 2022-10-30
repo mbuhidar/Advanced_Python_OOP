@@ -4,8 +4,9 @@ import requests
 
 class Temperature:
 
-    """A scraper that uses an yml file to read the xpath of a value it needs to extract
-    from the timeanddate.com/weather/ url"""
+    """A scraper that uses an yml file to read the xpath of a value it
+    needs to extract from the timeanddate.com/weather/ url
+    """
 
     headers = {
         'pragma': 'no-cache',
@@ -29,7 +30,9 @@ class Temperature:
         return url
 
     def _scrape(self):
-        """Extracts a value as instructed by the yml file and returns a dictionary"""
+        """Extracts a value as instructed by the yml file and returns
+        a dictionary
+        """
 
         url = self._build_url()
         extractor = Extractor.from_yaml_file(self.yml_path)

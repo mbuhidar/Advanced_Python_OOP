@@ -17,7 +17,8 @@ class CaloriesFormPage(MethodView):
 
     def get(self):
         calories_form = CaloriesForm()
-        return render_template('calories_form_page.html', caloriesform=calories_form)
+        return render_template('calories_form_page.html', 
+                               caloriesform=calories_form)
 
 
 class ResultsPage(MethodView):
@@ -32,9 +33,11 @@ class ResultsPage(MethodView):
         form_country = caloriesform.country.data
 
         temperature = Temperature(form_country, form_city).get()
-        calories = Calorie(form_weight, form_height, form_age, temperature=temperature)
+        calories = Calorie(form_weight, form_height, form_age,
+                           temperature=temperature)
 
-        return render_template('results.html', calories=int(calories.calculate()))
+        return render_template('results.html',
+                               calories=int(calories.calculate()))
 
 
 class CaloriesForm(Form):
@@ -49,7 +52,8 @@ class CaloriesForm(Form):
 
 
 app.add_url_rule('/', view_func=HomePage.as_view('home_page'))
-app.add_url_rule('/calories_form', view_func=CaloriesFormPage.as_view('calories_form_page'))
+app.add_url_rule('/calories_form',
+                 view_func=CaloriesFormPage.as_view('calories_form_page'))
 app.add_url_rule('/results', view_func=ResultsPage.as_view('results_page'))
 
 app.run(debug=True)
