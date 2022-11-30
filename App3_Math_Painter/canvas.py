@@ -1,5 +1,5 @@
-from PIL import Image
 import numpy as np
+from PIL import Image
 
 
 class Canvas:
@@ -17,5 +17,5 @@ class Canvas:
 
     def make(self, imagepath):
         """Converts the current array into an image file."""
-        img = Image.fromarray(self.data, 'RGB')
+        img = Image.fromarray(self.data, "RGB")
         img.save(imagepath)

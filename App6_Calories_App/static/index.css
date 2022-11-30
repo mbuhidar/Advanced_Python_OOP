@@ -1,14 +1,14 @@
 h2 {
-    color: grey;
-    text-align: center;
-    font-size: 50px;
+  color: grey;
+  text-align: center;
+  font-size: 50px;
 }
 
 body {
-    text-align: left;
-    background-color: ghostwhite;
-    padding: 50px;
-    line-height: 30px;
-    font-weight: bold; 
-    font-size: 22px;
+  text-align: left;
+  background-color: ghostwhite;
+  padding: 50px;
+  line-height: 30px;
+  font-weight: bold;
+  font-size: 22px;
 }
