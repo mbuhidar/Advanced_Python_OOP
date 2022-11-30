@@ -8,10 +8,18 @@ def main():
     period = input("What is the bill period? e.g. December 2020: ")
 
     name1 = input("What is your name? ")
-    days_in_house1 = int(input(f"How many days did {name1} stay in the house during the bill period? "))
+    days_in_house1 = int(
+        input(
+            f"How many days did {name1} stay in the house during the bill period? "
+        )
+    )
 
     name2 = input("What is the name of the other roommate? ")
-    days_in_house2 = int(input(f"How many days did {name2} stay in the house during the bill period? "))
+    days_in_house2 = int(
+        input(
+            f"How many days did {name2} stay in the house during the bill period? "
+        )
+    )
 
     the_bill = Bill(amount, period)
 
@@ -24,5 +32,6 @@ def main():
     pdf_report = PdfReport(filename=f"{the_bill.period}.pdf")
     pdf_report.generate(roommate1, roommate2, the_bill)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()

@@ -20,5 +20,7 @@ class Roommate:
         self.days_in_house = days_in_house
 
     def pays(self, bill, roommate2):
-        weight = self.days_in_house / (self.days_in_house + roommate2.days_in_house)
+        weight = self.days_in_house / (
+            self.days_in_house + roommate2.days_in_house
+        )
         return bill.amount * weight
