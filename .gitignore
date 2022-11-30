@@ -128,5 +128,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+#vscode
+.vscode/
+
 # config.py for passwords and API keys
 config.py
